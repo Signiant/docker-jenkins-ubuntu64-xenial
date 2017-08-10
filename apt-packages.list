@@ -1,0 +1,12 @@
+python-pip 
+curl 
+cmake
+openssh-server
+wget
+sudo
+git
+subversion
+tzdata
+lsb-release
+dh-make 
+devscripts
