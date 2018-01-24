@@ -79,6 +79,9 @@ RUN chmod 644 ${ANT_HOME}/lib/*.jar
 # Install link to ant
 RUN update-alternatives --install /usr/bin/ant ant ${ANT_HOME}/bin/ant 20000
 
+# Install the Whitesource scanner
+RUN wget --no-verbose https://s3.amazonaws.com/file-system-agent/whitesource-fs-agent-18.1.1.jar -O /whitesource-fs-agent.jar
+
 # Install and configure SSHD (needed by the Jenkins slave-on-demand plugin)
 RUN ssh-keygen -y -q -N "" -t dsa -f /etc/ssh/ssh_host_dsa_key
 RUN ssh-keygen -y -q -N "" -t rsa -f /etc/ssh/ssh_host_rsa_key
